@@ -71,7 +71,6 @@
 - [ ] Set up Supabase database connection
 - [ ] Create Clerk application
 - [ ] Configure Clerk environment variables
-- [ ] Set up GitHub repository (if not already done)
 - [ ] Prepare Vercel project (deployment config)
 
 ---
