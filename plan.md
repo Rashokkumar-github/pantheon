@@ -27,7 +27,7 @@
   - Row Level Security (RLS) for data access control
 
 ### Authentication
-- **Clerk** - Authentication service (OAuth/social login, no user/password)
+- **Supabase Auth** - Built-in authentication service (email/password, OAuth providers)
 
 ### AI Services (TBD)
 - **Photo Enhancement API** - To be determined
@@ -69,24 +69,24 @@
 ### 1.3 Infrastructure Setup
 - [x] Create Supabase project
 - [x] Set up Supabase database connection
-- [ ] Create Clerk application
-- [ ] Configure Clerk environment variables
+- [x] Set up Supabase authentication
 - [ ] Prepare Vercel project (deployment config)
 
 ---
 
 ## Phase 2: Authentication & Database Schema
 
-### 2.1 Clerk Authentication Integration
-- [ ] Install Clerk Next.js SDK
-- [ ] Configure Clerk middleware for route protection
-- [ ] Create authentication pages (sign-in, sign-up)
-- [ ] Set up Clerk webhooks for user sync (if needed)
+### 2.1 Supabase Authentication Integration
+- [x] Install Supabase SSR package (@supabase/ssr)
+- [x] Configure Supabase middleware for route protection
+- [x] Create authentication pages (sign-in, sign-up)
+- [x] Set up auth callback route
+- [x] Create auth utilities and hooks
 - [ ] Test authentication flow
 
 ### 2.2 Database Schema Design
 - [ ] Design database schema for:
-  - [ ] Users table (linked to Clerk user IDs)
+  - [ ] Users table (linked to Supabase auth user IDs)
   - [ ] Jobs table (job applications)
   - [ ] Photos table (uploaded and enhanced photos)
   - [ ] Cover Letters table (generated cover letters)
@@ -235,7 +235,7 @@
 - [ ] Set up production environment variables
 - [ ] Configure Vercel deployment settings
 - [ ] Set up production Supabase instance
-- [ ] Configure Clerk for production
+- [ ] Configure Supabase Auth for production
 - [ ] Run final tests in staging environment
 
 ### 10.2 Deployment & Monitoring
