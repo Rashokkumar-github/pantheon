@@ -60,11 +60,11 @@
 - [x] Set up .gitignore file
 
 ### 1.2 Development Environment
-- [ ] Install and configure Tailwind CSS v4
-- [ ] Set up Shadcn UI components library
-- [ ] Configure ESLint 9
-- [ ] Set up environment variables structure (.env.local)
-- [ ] Create project folder structure
+- [x] Install and configure Tailwind CSS v4
+- [x] Set up Shadcn UI components library
+- [x] Configure ESLint 9
+- [x] Set up environment variables structure (.env.local)
+- [x] Create project folder structure
 
 ### 1.3 Infrastructure Setup
 - [ ] Create Supabase project
