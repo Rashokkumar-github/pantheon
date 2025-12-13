@@ -67,8 +67,8 @@
 - [x] Create project folder structure
 
 ### 1.3 Infrastructure Setup
-- [ ] Create Supabase project
-- [ ] Set up Supabase database connection
+- [x] Create Supabase project
+- [x] Set up Supabase database connection
 - [ ] Create Clerk application
 - [ ] Configure Clerk environment variables
 - [ ] Prepare Vercel project (deployment config)
