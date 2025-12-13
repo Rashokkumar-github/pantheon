@@ -1,18 +1,25 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-
-if (!supabaseUrl) {
-  throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_URL')
-}
-
-if (!supabaseAnonKey) {
-  throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_ANON_KEY')
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
 // Client for use in Client Components and API routes
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+// Will throw error when used if env vars are missing
+export const supabase: SupabaseClient = (() => {
+  if (!supabaseUrl) {
+    console.warn('⚠️  NEXT_PUBLIC_SUPABASE_URL is not set')
+    // Return a dummy client that will error on use
+    return createClient('https://placeholder.supabase.co', 'placeholder-key')
+  }
+
+  if (!supabaseAnonKey) {
+    console.warn('⚠️  NEXT_PUBLIC_SUPABASE_ANON_KEY is not set')
+    // Return a dummy client that will error on use
+    return createClient(supabaseUrl || 'https://placeholder.supabase.co', 'placeholder-key')
+  }
+
+  return createClient(supabaseUrl, supabaseAnonKey)
+})()
 
 // Server-side client with service role key (bypasses RLS)
 // Only use this in API routes or server components when you need admin access

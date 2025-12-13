@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/db'
+import { createClient } from '@supabase/supabase-js'
 
 /**
  * Test API route to verify Supabase connection
@@ -7,6 +7,28 @@ import { supabase } from '@/lib/db'
  */
 export async function GET() {
   try {
+    // Check environment variables
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+    if (!supabaseUrl || !supabaseAnonKey) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Missing Supabase environment variables',
+          missing: {
+            url: !supabaseUrl,
+            anonKey: !supabaseAnonKey,
+          },
+          message: 'Please ensure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set in .env.local',
+        },
+        { status: 500 }
+      )
+    }
+
+    // Create client for testing
+    const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
     // Simple connection test
     const { data, error } = await supabase
       .from('_test')
