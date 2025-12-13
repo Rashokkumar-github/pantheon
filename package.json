@@ -1,7 +1,10 @@
 {
-  "name": "pantheon-temp",
+  "name": "pantheon",
   "version": "0.1.0",
+  "description": "Professional Job Application Tracker - A comprehensive tool for managing job applications, generating cover letters, enhancing profile photos, and creating resume bullet points.",
   "private": true,
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
