@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { verifySchema } from '@/lib/db/test-schema'
 
 /**
- * Test API route to verify Supabase connection
+ * Test API route to verify Supabase connection and schema
  * GET /api/test-db
  */
 export async function GET() {
@@ -29,37 +30,31 @@ export async function GET() {
     // Create client for testing
     const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-    // Simple connection test
-    const { data, error } = await supabase
-      .from('_test')
-      .select('*')
-      .limit(1)
-    
-    // If we get an error about table not existing, that's fine - connection works
-    if (error && error.code === 'PGRST116') {
-      return NextResponse.json({
-        success: true,
-        message: 'Supabase connection successful (no tables yet)',
-        projectUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
-      })
+    // Test that all schema tables exist
+    const requiredTables = ['users', 'jobs', 'photos', 'cover_letters', 'resume_bullets']
+    const tableTests: Record<string, { exists: boolean; error?: string }> = {}
+
+    for (const table of requiredTables) {
+      const { error } = await supabase.from(table).select('*').limit(0)
+      tableTests[table] = {
+        exists: !error,
+        error: error?.message,
+      }
     }
-    
-    if (error) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: error.message,
-          code: error.code,
-        },
-        { status: 500 }
-      )
-    }
-    
+
+    // Verify schema using the test utility
+    const schemaVerification = await verifySchema()
+
+    const allTablesExist = Object.values(tableTests).every((test) => test.exists)
+
     return NextResponse.json({
-      success: true,
-      message: 'Supabase connection successful',
-      data,
+      success: allTablesExist && schemaVerification.success,
+      message: allTablesExist
+        ? 'Supabase connection and schema verification successful'
+        : 'Connection successful but some tables are missing',
       projectUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+      tables: tableTests,
+      schemaVerification,
     })
   } catch (error) {
     return NextResponse.json(

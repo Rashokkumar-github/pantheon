@@ -85,15 +85,15 @@
 - [ ] Test authentication flow
 
 ### 2.2 Database Schema Design
-- [ ] Design database schema for:
-  - [ ] Users table (linked to Supabase auth user IDs)
-  - [ ] Jobs table (job applications)
-  - [ ] Photos table (uploaded and enhanced photos)
-  - [ ] Cover Letters table (generated cover letters)
-  - [ ] Resume Bullets table (generated resume bullet points)
-- [ ] Create Supabase migrations
-- [ ] Set up Row Level Security (RLS) policies
-- [ ] Test database connections and queries
+- [x] Design database schema for:
+  - [x] Users table (linked to Supabase auth user IDs)
+  - [x] Jobs table (job applications)
+  - [x] Photos table (uploaded and enhanced photos)
+  - [x] Cover Letters table (generated cover letters)
+  - [x] Resume Bullets table (generated resume bullet points)
+- [x] Create Supabase migrations
+- [x] Set up Row Level Security (RLS) policies
+- [x] Test database connections and queries
 
 ---
 
