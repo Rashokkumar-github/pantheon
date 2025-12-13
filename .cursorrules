@@ -1,0 +1,24 @@
+# Cursor Rules for Pantheon Project
+
+## Project Context
+This is a Next.js job application tracker using:
+- Next.js 16 with App Router
+- TypeScript
+- Supabase for backend/database
+- Clerk for authentication
+- Tailwind CSS v4 + Shadcn UI
+
+## Code Style
+- Use TypeScript for all new files
+- Follow Next.js App Router conventions
+- Use path aliases (@/components, @/lib, etc.)
+- All source code is in src/ directory
+
+## Database
+- Supabase PostgreSQL database
+- Use Row Level Security (RLS) for data access
+- Service role key should only be used server-side
+
+## MCP Server
+- Supabase MCP server can be configured for database assistance
+- See MCP_SETUP.md for configuration instructions
