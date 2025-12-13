@@ -69,7 +69,6 @@
 ### 1.3 Infrastructure Setup
 - [x] Create Supabase project
 - [x] Set up Supabase database connection
-- [x] Set up Supabase authentication
 - [ ] Prepare Vercel project (deployment config)
 
 ---
@@ -100,18 +99,18 @@
 ## Phase 3: Core UI Foundation
 
 ### 3.1 Design System Setup
-- [ ] Define color palette with warmer tones
-- [ ] Configure Tailwind theme with custom colors
-- [ ] Set up typography system
-- [ ] Create base layout components
-- [ ] Set up Shadcn UI theme configuration
+- [x] Define color palette with blue tones (OKLCH color space)
+- [x] Configure Tailwind theme with custom colors
+- [x] Set up typography system (Geist font family)
+- [x] Create base layout components
+- [x] Set up Shadcn UI theme configuration
 
 ### 3.2 Navigation & Layout
-- [ ] Create main layout component
-- [ ] Build navigation bar/header
-- [ ] Implement protected route wrapper
-- [ ] Create dashboard/home page structure
-- [ ] Add loading states and error boundaries
+- [x] Create main layout component (marketing + dashboard layouts)
+- [x] Build navigation bar/header
+- [x] Implement protected route wrapper (dashboard layout)
+- [x] Create dashboard/home page structure
+- [x] Add loading states and error boundaries
 
 ---
 
