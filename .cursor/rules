@@ -22,3 +22,4 @@ This is a Next.js job application tracker using:
 ## MCP Server
 - Supabase MCP server can be configured for database assistance
 - See MCP_SETUP.md for configuration instructions
+

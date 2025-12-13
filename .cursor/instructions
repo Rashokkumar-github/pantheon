@@ -1,0 +1,21 @@
+# Development Instructions
+
+## File Structure
+- `src/app/` - Next.js App Router pages and API routes
+- `src/components/` - React components (Shadcn UI in `src/components/ui/`)
+- `src/lib/` - Utility functions and helpers
+- `src/hooks/` - Custom React hooks
+- `src/types/` - TypeScript type definitions
+
+## Import Paths
+Always use path aliases:
+- `@/components` → `src/components`
+- `@/lib` → `src/lib`
+- `@/hooks` → `src/hooks`
+- `@/types` → `src/types`
+
+## Commits
+- Use conventional commit messages (feat:, fix:, docs:, refactor:, chore:)
+- Commit changes as you work, not at the end
+- Write descriptive commit messages
+
