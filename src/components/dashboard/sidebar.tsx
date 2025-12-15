@@ -12,6 +12,7 @@ import {
   ListChecks,
   Settings,
   LogOut,
+  Sparkles,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -21,6 +22,12 @@ const navigation = [
     name: 'Dashboard',
     href: '/dashboard',
     icon: LayoutDashboard,
+  },
+  {
+    name: 'Smart Apply',
+    href: '/dashboard/jobs/apply',
+    icon: Sparkles,
+    highlight: true,
   },
   {
     name: 'Job Applications',
@@ -82,7 +89,8 @@ export function Sidebar({ collapsed = false }: SidebarProps) {
       <nav className="flex-1 space-y-1 px-2 py-4 lg:px-3">
         {navigation.map((item) => {
           const isActive = pathname === item.href || 
-            (item.href !== '/dashboard' && pathname.startsWith(item.href))
+            (item.href !== '/dashboard' && pathname.startsWith(item.href) && item.href !== '/dashboard/jobs/apply')
+          const isHighlight = 'highlight' in item && item.highlight
           
           return (
             <Link
@@ -94,7 +102,9 @@ export function Sidebar({ collapsed = false }: SidebarProps) {
                 collapsed && 'justify-center px-2',
                 isActive
                   ? 'bg-sidebar-accent text-sidebar-accent-foreground'
-                  : 'text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground'
+                  : isHighlight
+                    ? 'bg-primary/10 text-primary hover:bg-primary/20'
+                    : 'text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-foreground'
               )}
             >
               <item.icon
@@ -102,7 +112,9 @@ export function Sidebar({ collapsed = false }: SidebarProps) {
                   'h-5 w-5 shrink-0 transition-colors',
                   isActive
                     ? 'text-sidebar-primary'
-                    : 'text-sidebar-foreground/50 group-hover:text-sidebar-foreground/70'
+                    : isHighlight
+                      ? 'text-primary'
+                      : 'text-sidebar-foreground/50 group-hover:text-sidebar-foreground/70'
                 )}
               />
               {!collapsed && item.name}

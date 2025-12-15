@@ -194,7 +194,29 @@
 - [x] Display generated bullet points
 - [x] Add edit functionality for generated bullets
 - [x] Implement save/export functionality (copy to clipboard, save to database)
-- [ ] Link resume bullets to specific job applications
+
+---
+
+## Phase 7.5: Unified Smart Apply Flow (NEW)
+
+### 7.5.1 Smart Apply Wizard
+- [x] Create unified "Smart Apply" page with multi-step wizard
+- [x] Step 1: Job details input (company, title, description, etc.)
+- [x] Step 2: Resume input (paste text or upload PDF/image)
+- [x] Step 3: AI generates both cover letter AND resume bullets simultaneously
+- [x] Step 4: Review, edit, and save all materials together
+
+### 7.5.2 Backend Integration
+- [x] Create combined API route for generating both materials at once
+- [x] Link generated cover letters to job applications
+- [x] Link generated resume bullets to job applications
+- [x] Save job application, cover letter, and bullets in single transaction
+
+### 7.5.3 UI/UX Improvements
+- [x] Add progress indicator for wizard steps
+- [x] Show side-by-side or tabbed view for cover letter and bullets
+- [x] Allow copying all materials at once
+- [x] Quick navigation back to edit specific sections
 
 ---
 

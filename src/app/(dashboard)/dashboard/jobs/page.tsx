@@ -4,7 +4,7 @@ import { DashboardHeader } from '@/components/dashboard/dashboard-header'
 import { JobList } from '@/components/jobs/job-list'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
-import { Plus } from 'lucide-react'
+import { Plus, Sparkles } from 'lucide-react'
 
 function JobListSkeleton() {
   return (
@@ -43,12 +43,20 @@ export default function JobsPage() {
         title="Job Applications"
         description="Track and manage all your job applications."
       >
-        <Button asChild className="gap-2">
-          <Link href="/dashboard/jobs/new">
-            <Plus className="h-4 w-4" />
-            Add Application
-          </Link>
-        </Button>
+        <div className="flex gap-2">
+          <Button asChild variant="outline" className="gap-2">
+            <Link href="/dashboard/jobs/new">
+              <Plus className="h-4 w-4" />
+              Add Application
+            </Link>
+          </Button>
+          <Button asChild className="gap-2">
+            <Link href="/dashboard/jobs/apply">
+              <Sparkles className="h-4 w-4" />
+              Smart Apply
+            </Link>
+          </Button>
+        </div>
       </DashboardHeader>
 
       <div className="flex-1 p-6 lg:p-8">
