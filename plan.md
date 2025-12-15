@@ -1,11 +1,11 @@
 # Project Plan: Professional Job Application Tracker
 
 ## Open Questions
-- [ ] What photo enhancement service/API should we use? (e.g., Remini, AI photo enhancer, custom solution)
+- [x] What photo enhancement service/API should we use? → **Replicate CodeFormer** (face restoration/enhancement model)
 - [ ] What AI service should we use for cover letter generation? (e.g., OpenAI GPT, Anthropic Claude, other)
 - [ ] What AI service should we use for resume bullet point generation? (same as cover letter or different?)
 - [ ] Should users be able to edit generated cover letters and resume bullets before saving?
-- [ ] What file storage solution should we use for uploaded photos? (Supabase Storage, AWS S3, Cloudinary?)
+- [x] What file storage solution should we use for uploaded photos? → **Supabase Storage** (with RLS policies)
 
 ---
 
@@ -133,39 +133,49 @@
 
 ---
 
-## Phase 5: Photo Enhancement Feature
+## Phase 5: Photo Enhancement & Generation Feature
 
 ### 5.1 Photo Upload & Storage
-- [ ] Create photo upload component
-- [ ] Set up file storage (Supabase Storage or alternative)
-- [ ] Implement image preview
-- [ ] Add image validation (size, format)
-- [ ] Store uploaded photos in database
+- [x] Create photo upload component
+- [x] Set up file storage (Supabase Storage or alternative)
+- [x] Implement image preview
+- [x] Add image validation (size, format)
+- [x] Store uploaded photos in database
 
 ### 5.2 Photo Enhancement Integration
-- [ ] Research and select photo enhancement API/service
-- [ ] Create API route for photo enhancement
-- [ ] Integrate enhancement service
-- [ ] Build enhanced photo display component
-- [ ] Add download functionality for enhanced photos
-- [ ] Implement photo history/version tracking
+- [x] Research and select photo enhancement API/service
+- [x] Create API route for photo enhancement
+- [x] Integrate enhancement service (Replicate CodeFormer)
+- [x] Build enhanced photo display component
+- [x] Add download functionality for enhanced photos
+- [x] Implement photo history/version tracking
+
+### 5.3 AI Headshot Generation (NEW)
+- [x] Create photo generator component with style selection
+- [x] Build customization UI (headshot style, background, attire)
+- [x] Create API route for AI headshot generation (Replicate PhotoMaker)
+- [x] Implement 4-step flow: Upload → Customize → Generate → Download
+- [x] Add before/after comparison view
+- [x] Support multiple style presets (Corporate, Startup, Creative, Executive)
+- [x] Support background options (Studio, Office, Outdoor, Gradient, Abstract)
+- [x] Support attire options (Formal, Business Casual, Smart Casual, Creative)
 
 ---
 
 ## Phase 6: Cover Letter Generation
 
 ### 6.1 Cover Letter Generation Setup
-- [ ] Research and select AI service for cover letter generation
-- [ ] Set up AI service API keys and configuration
-- [ ] Design prompt templates for cover letter generation
-- [ ] Create API route for cover letter generation
+- [x] Research and select AI service for cover letter generation → **Anthropic Claude**
+- [x] Set up AI service API keys and configuration
+- [x] Design prompt templates for cover letter generation
+- [x] Create API route for cover letter generation
 
 ### 6.2 Cover Letter UI & Features
-- [ ] Build job description input form
-- [ ] Create cover letter generation interface
-- [ ] Display generated cover letter
-- [ ] Add edit functionality for generated cover letters
-- [ ] Implement save/export functionality
+- [x] Build job description input form
+- [x] Create cover letter generation interface
+- [x] Display generated cover letter
+- [x] Add edit functionality for generated cover letters
+- [x] Implement save/export functionality
 - [ ] Link cover letters to specific job applications
 
 ---
