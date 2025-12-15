@@ -183,17 +183,17 @@
 ## Phase 7: Resume Bullet Point Generation
 
 ### 7.1 Resume Bullet Generation Setup
-- [ ] Research and select AI service for resume bullet generation
-- [ ] Set up AI service API keys (if different from cover letters)
-- [ ] Design prompt templates for resume bullet generation
-- [ ] Create API route for resume bullet generation
+- [x] Research and select AI service for resume bullet generation → **Anthropic Claude** (same as cover letters)
+- [x] Set up AI service API keys (if different from cover letters) → Reuses existing ANTHROPIC_API_KEY
+- [x] Design prompt templates for resume bullet generation
+- [x] Create API route for resume bullet generation
 
 ### 7.2 Resume Bullet UI & Features
-- [ ] Build job description input form (reuse or create new)
-- [ ] Create resume bullet generation interface
-- [ ] Display generated bullet points
-- [ ] Add edit functionality for generated bullets
-- [ ] Implement save/export functionality
+- [x] Build job description input form (reuse or create new)
+- [x] Create resume bullet generation interface
+- [x] Display generated bullet points
+- [x] Add edit functionality for generated bullets
+- [x] Implement save/export functionality (copy to clipboard, save to database)
 - [ ] Link resume bullets to specific job applications
 
 ---
